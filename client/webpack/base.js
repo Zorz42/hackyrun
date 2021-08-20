@@ -36,5 +36,18 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./index.html"
     })
-  ]
+  ],
+  devServer: {
+    proxy: {
+      '/ws': {
+        target: 'wss://ptrun-server.develop.cloud.ptr.si',
+        secure: false,
+        changeOrigin: true,
+        ws: true,
+        onProxyReqWs: proxyReq => {
+          proxyReq.setHeader('origin', 'https://ptrun.develop.cloud.ptr.si');
+        }
+      }
+    }
+  }
 };

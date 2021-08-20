@@ -1,12 +1,12 @@
-import messages from '../messages_pb.js';
+import messages from '../messages_pb';
 
 export class Websocket {
     constructor(receiveCallback) {
         this.receiveCallback = receiveCallback;
 
         // Create WebSocket connection.
-        //this.socket = new WebSocket('ws://localhost:8080/ws');
-        this.socket = new WebSocket('wss://ptrun-server.develop.cloud.ptr.si/ws');
+        this.socket = new WebSocket('ws://localhost:3000/ws');
+        //this.socket = new WebSocket('wss://ptrun-server.develop.cloud.ptr.si/ws');
         this.socket.binaryType = 'arraybuffer';
 
         // Connection opened
