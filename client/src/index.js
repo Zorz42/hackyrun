@@ -97,7 +97,7 @@ class Game extends Phaser.Scene {
         // Only send if we're actually moving or just stopped
         if (velocity.dx !== 0 || velocity.dy !== 0
             || Phaser.Input.Keyboard.JustUp(this.wasd.A) || Phaser.Input.Keyboard.JustUp(this.wasd.D)
-        || (this.hacks && (Phaser.Input.Keyboard.JustUp(this.wasd.W) || Phaser.Input.Keyboard.JustUp(this.wasd.S)))) {
+            || (this.hacks && (Phaser.Input.Keyboard.JustUp(this.wasd.W) || Phaser.Input.Keyboard.JustUp(this.wasd.S)))) {
             this.websocket.playerMoveSend(this.player.x, this.player.y,
                 this.player.body.velocity.x, this.player.body.velocity.y);
         }

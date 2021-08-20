@@ -19,7 +19,6 @@ export class Websocket {
         });
 
 
-
         // Listen for messages
         this.socket.addEventListener('message', (event) => {
             if (this.receiveCallback == null ||
